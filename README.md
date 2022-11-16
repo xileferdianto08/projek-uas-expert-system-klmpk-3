@@ -7,3 +7,6 @@ Kelompok 3 pada projek ini terdiri dari:
 3. Felix Sutanto (00000045539)
 4. Noveliyo Frendika (00000050725)
 5. Raihan Bayu Prasetyo (00000050623)
+
+
+Website ini dibuat dengan PHP dengan bantuan framework CodeIgniter3
