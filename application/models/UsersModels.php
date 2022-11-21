@@ -38,7 +38,7 @@ class UsersModels extends CI_Model
     public function register($name, $email, $password, $age)
     {
         $data = array(
-            'userId' => NULL,
+            'id' => NULL,
             'name' => str_replace("'", "", $name),
             'email' => str_replace("'", "", $email),
             'password' => str_replace("'", "", $password),
@@ -68,9 +68,5 @@ class UsersModels extends CI_Model
         return $this->db->get_where('user', ['email' => $email]);
     }
 
-    public function checkUsername($name)
-    {
-        return $this->db->get_where('user', ['name' => $name]);
-    }
 }
 ?>
