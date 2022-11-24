@@ -57,9 +57,9 @@ class UsersModels extends CI_Model
         $this->db->update('user');
     }
 
-    public function getId($name)
+    public function getId($email)
     {
-        $this->db->select('*')->from('user')->where("name = '$name'");
+        $this->db->select('*')->from('user')->where("email = '$email'");
         return $this->db->get()->result();
     }
 

@@ -35,8 +35,7 @@ class Users extends CI_Controller {
         $userData = $this->UsersModels->login($email, $hashedPwd);
         if (!empty($userData)) {
             $this->session->set_userdata('email', $userData[0]->email);
-            $this->session->set_userdata('is_login', '1');
-            redirect('https://www.google.com/');
+            redirect('Dashboard');
 
         } else {
             $this->session->set_flashdata('msg', '<div class="login-error-text" style="margin-top:1%">Email Atau Password Anda Salah Silahkan Diulangi Lagi</div>');
@@ -47,7 +46,6 @@ class Users extends CI_Controller {
     public function logout()
     {
         $this->session->unset_userdata('email');
-        $this->session->unset_userdata('is_login');
         redirect(base_url('Users'));
     }
 
