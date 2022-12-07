@@ -12,6 +12,7 @@ class Diagnosa extends CI_Controller
         $this->load->model('JenisSolusi');
         $this->load->model('HasilDiagnosaModels');
         $this->load->model('SurveiDiagnosa');
+        
     }
 
     public function index()
@@ -49,7 +50,11 @@ class Diagnosa extends CI_Controller
                     if ((int) $result[$i+2]->gejalaId == 10) {
                         if((int) $result[$i+3]->gejalaId == 11){
                             if((int) $result[$i+4]->gejalaId == 18){
+                                
                                 $this->HasilDiagnosaModels->addHasilDiagnosa($userId, 1);
+                                $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]);
+
+                                
 
                                 break;
                             }
@@ -68,6 +73,7 @@ class Diagnosa extends CI_Controller
                         if((int) $result[$i+3]->gejalaId == 5){
                             if((int) $result[$i+4]->gejalaId == 7){
                                 $this->HasilDiagnosaModels->addHasilDiagnosa($userId,2);
+                                $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]);
                                 break;
                             }
                             
@@ -84,6 +90,7 @@ class Diagnosa extends CI_Controller
                     if ((int) $result[$i+2]->gejalaId == 13) {
                         if((int) $result[$i+3]->gejalaId == 17){
                             $this->HasilDiagnosaModels->addHasilDiagnosa($userId,3);
+                            $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]);
                             break;
                         }
                         
@@ -97,6 +104,7 @@ class Diagnosa extends CI_Controller
                 if((int) $result[$i+1]->gejalaId == 12){
                     if ((int) $result[$i+2]->gejalaId == 13) {
                         $this->HasilDiagnosaModels->addHasilDiagnosa($userId,4);
+                        $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]);
                         break;
                     }
                    
@@ -109,6 +117,7 @@ class Diagnosa extends CI_Controller
                     if ((int) $result[$i+2]->gejalaId == 12) {
                         if((int) $result[$i+3]->gejalaId == 13){
                             $this->HasilDiagnosaModels->addHasilDiagnosa($userId,5);
+                            $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]);
                             break;
                             
                         }

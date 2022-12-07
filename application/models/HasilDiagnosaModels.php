@@ -36,6 +36,8 @@ class HasilDiagnosaModels extends CI_Model {
         );
 
         $this->db->insert('hasil_diagnosa', $data);
+
+        
     }
 }
 ?>
