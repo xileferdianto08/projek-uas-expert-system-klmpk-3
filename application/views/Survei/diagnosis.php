@@ -17,6 +17,8 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/styleDiagnosis.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/styleDashboard.css'); ?>">
+
 </head>
 
 <!-- diagnosis page for covid diagnosis website -->
@@ -36,130 +38,106 @@
                 <p class="mt-3">If you are experiencing any of the following symptoms, please contact your primary care provider or the COVID-19 hotline at 119.</p>
             </div>
         </div>
-        <?php echo form_open('Diagnosa/inputGejala' , array('class' => 'table-responsive')); ?>
-            
-            <table class="table">
-                <tbody>
-                    <tr style="background-color:#c1c1c1ad;">
-                        <td><b>FEELED SYMPTOMS</b></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <?php
-                    
-                    foreach ($dataGejala as $gejala) :
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Gejala-gejala</th>
+                    <th scope="col">Solusi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Demam, Pilek, Menggigil, Badan Lemas, dan Badan Terasa Dingin pada Malam Hari</td>
+                    <td>Minum Obat Pereda Demam</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Demam, Pilek, Pusing, Batuk Berdahak dan Susah Menelan</td>
+                    <td>Tetap Terhidrasi</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Denyut Jantung Tidak Normal, Diare, Ruam pada Kulit, dan Badan Pegal-pegal</td>
+                    <td>Istirahat yang Cukup</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>Badan Lemas, Kehilangan Indra Perasa, dan Ruam pada Kulit</td>
+                    <td>Pantau Gejala</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>Demam, Susah Menelan, Kehilangan Indra Perasa, dan Ruam pada Kulit</td>
+                    <td>Lakukan Isolasi Mandiri</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>Demam, Pilek, Pusing, Batuk Kering, Batuk Berdahak, Denyut Jantung Tidak Normal, Susah Menelan, Sesak Nafas, Diare, Menggigil, Badan Lemas, Kehilangan Indra Perasa, Ruam pada Kulit, Mata Merah, Dada Terasa Berat, Meriang, Badan Pegal-pegal, dan Badan Terasa Dingin pada Malam Hari</td>
+                    <td>Hubungi Dokter</td>
+                </tr>
+            </tbody>
+        </table><br>
+        <?php echo form_open('Diagnosa/inputGejala', array('class' => 'table-responsive')); ?>
 
-                    ?>
-                        <tr>
-                            <td>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <input type="checkbox" class="container_radio" name="gejala[]" id="gejala[]" value="<?= (int)$gejala['id']; ?>"><?= $gejala['jenisGejala']; ?>
-                                        <!-- <span class="checkmark"></span> -->
+        <table class="table">
+            <tbody>
+                <tr style="background-color:#c1c1c1ad;">
+                    <td><b>FEELED SYMPTOMS</b></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <?php
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    <?php
-                        
-                    endforeach;
-                    ?>
-                    <tr style="background-color:#c1c1c1ad;">
-                        <td><b>CONTACT HISTORY (UNUSEABLE)</b></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                foreach ($dataGejala as $gejala) :
+
+                ?>
                     <tr>
-                        <td>Have a history of close contact with patients with confirmed COVID-19 or probable COVID-19<br /><small>"Melakukan kontak fisik, atau berada dalam satu ruangan, atau berkunjung (berada dalam radius 1 meter dengan kasus pasien dalam pengawasan, probable atau konformasi) dalam 2 hari sebelum kasus timbul gejala dan hingga 14 hari setelah kasus timbul gejala"</small< /td>
                         <td>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="container_radio">No
-                                        <input type="radio" class="b1" name="b1" id="b1" value="0">
-                                        <span class="checkmark_t"></span>
-                                    </label>
-                                </div>
-                            </div>
+                            <?= $gejala['jenisGejala']; ?>
                         </td>
                         <td>
                             <div class="form-group">
                                 <div class="radio">
-                                    <label class="container_radio">Yes
-                                        <input type="radio" class="b1" name="b1" id="b1" value="1">
-                                        <span class="checkmark"></span>
-                                    </label>
+                                    <input type="checkbox" class="container_radio" name="gejala[]" id="gejala[]" value="<?= (int)$gejala['id']; ?>">
+                                    <!-- <span class="checkmark"></span> -->
+
                                 </div>
                             </div>
                         </td>
+
                     </tr>
-                    <tr style="background-color:#c1c1c1ad;">
-                        <td><b>MOBILITY HISTORY (UNUSEABLE)</b></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>Have a history of traveling or living abroad with local transmission</td>
-                        <td>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="container_radio">No
-                                        <input type="radio" class="a1" name="a1" id="a1" value="0">
-                                        <span class="checkmark_t"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="container_radio">Yes
-                                        <input type="radio" class="a1" name="a1" id="a1" value="1">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Have a history of traveling or living in a local transmission area in Indonesia</td>
-                        <td>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="container_radio">No
-                                        <input type="radio" class="a2" name="a2" id="a2" value="0">
-                                        <span class="checkmark_t"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="form-group">
-                                <div class="radio">
-                                    <label class="container_radio">Yes
-                                        <input type="radio" class="a2" name="a2" id="a2" value="1">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                <?php
+
+                endforeach;
+                ?>
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row ">
+            <h5 class="survei-error">
+                <?php echo $this->session->flashdata('msg'); ?>
+            </h5>
+            <div class="col ">
+                <div class="col-md-12 mt-3 ">
+                    <button class="btn btn-primary " id="btnSubmit" style=" margin-left : 40%">Submit</button>
+                    <?php echo form_close(); ?>
+                </div>
+            </div>
+
+
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <button  class="btn btn-primary" id="btnSubmit">Submit</button>
-            <?php echo form_close(); ?>
-        </div>
-    </div>
-    
-    <div class="row">
-        <div class="col-md-12">
-            <div id="result"></div>
-        </div>
-    </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <?= $footer; ?>
 </body>
 
 </html>

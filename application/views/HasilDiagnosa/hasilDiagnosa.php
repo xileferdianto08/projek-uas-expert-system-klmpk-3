@@ -17,6 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/styleDiagnosis.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/styleDashboard.css'); ?>">
 </head>
 
 <body>
@@ -26,18 +27,43 @@
         <div class="row">
             <div class="col">
                 <h1 class="mt-3">Hasil Diagnosa</h1>
-                <h4 class="mt-5">Hai, <?= $name; ?>!</h4>
-                <?php if ($resultList) {
-                    foreach ($resultList as $r) :?>
-                        <h4><?= $r['namaSolusi']; ?></h4>
-                        <p><?= $r['solusi']; ?></p>
-                <?php endforeach;?>
+                <h4 class="mt-4">Hai, <?= $name; ?>!</h4>
+                <p class="mt-2" style="font-size:14pt">Berikut hasil diagnosa anda</p>
+                <h5 class="mt-2" style="font-size:14pt">Catatan: Jika hasil diagnosa anda tidak muncul, silahkan mengisi ulang survei diagnosa</h5>
+                <div class="mt-4"></div>
+                <?php
+                date_default_timezone_set('Asia/Jakarta');
+                if ($resultList) {
+                    foreach ($resultList as $r) :
+                        $date = new DateTimeImmutable($r['dateTime']) ?>
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title"><?= $r['namaSolusi']; ?></h4>
+                                <p class="card-text"><?= $r['solusi']; ?></p>
+                                <p class="card-text">Survei dilakukan pada: <?= $date->format('l jS \o\f F Y h:i:s A'); ?></p>
+                            </div>
+                        </div>
+                        <div class="mb-4"></div>
+
+                    <?php endforeach; ?>
 
                 <?php } else { ?>
                     <p>Anda belum memiliki data, silahkan lakukan diagnosa mandiri terlebih dahulu</p>
+
+                    <h5 class="mt-2" style="font-size:14pt">Catatan: Jika hasil diagnosa anda tidak muncul, silahkan mengisi ulang survei diagnosa</h5>
                     <a href="<?= base_url('Diagnosa') ?>" class="button">Mulai Diagnosa</a>
                 <?php } ?>
                 <br>
-                
             </div>
+        </div>
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <?= $footer; ?>
 </body>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 05:15 AM
+-- Generation Time: Dec 08, 2022 at 04:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,9 +39,9 @@ CREATE TABLE `hasil_diagnosa` (
 --
 
 INSERT INTO `hasil_diagnosa` (`id`, `userId`, `solusiId`, `dateTime`) VALUES
-(9, 1, 2, '2022-12-07 05:13:00'),
-(10, 1, 1, '2022-12-07 05:13:38'),
-(11, 1, 4, '2022-12-07 05:14:19');
+(1, 1, 2, '2022-12-08 15:35:39'),
+(2, 1, 2, '2022-12-08 15:53:26'),
+(3, 1, 1, '2022-12-08 16:26:43');
 
 -- --------------------------------------------------------
 
@@ -120,19 +120,26 @@ CREATE TABLE `survei_diagnosa` (
 --
 
 INSERT INTO `survei_diagnosa` (`id`, `userId`, `gejalaId`, `diagnosed`) VALUES
+(1, 1, 1, 1),
+(2, 1, 2, 1),
+(3, 1, 3, 1),
+(4, 1, 5, 1),
+(5, 1, 7, 1),
 (6, 1, 1, 1),
 (7, 1, 2, 1),
 (8, 1, 3, 1),
 (9, 1, 5, 1),
 (10, 1, 7, 1),
-(11, 1, 1, 1),
-(12, 1, 2, 1),
-(13, 1, 10, 1),
-(14, 1, 11, 1),
-(15, 1, 18, 1),
-(16, 1, 11, 1),
-(17, 1, 12, 1),
-(18, 1, 13, 1);
+(17, 1, 1, 1),
+(18, 1, 2, 1),
+(19, 1, 3, 1),
+(20, 1, 5, 1),
+(21, 1, 7, 1),
+(28, 1, 1, 1),
+(29, 1, 2, 1),
+(30, 1, 10, 1),
+(31, 1, 11, 1),
+(32, 1, 18, 1);
 
 -- --------------------------------------------------------
 
@@ -201,7 +208,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `hasil_diagnosa`
 --
 ALTER TABLE `hasil_diagnosa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jenis_gejala`
@@ -219,7 +226,7 @@ ALTER TABLE `jenis_solusi`
 -- AUTO_INCREMENT for table `survei_diagnosa`
 --
 ALTER TABLE `survei_diagnosa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `user`

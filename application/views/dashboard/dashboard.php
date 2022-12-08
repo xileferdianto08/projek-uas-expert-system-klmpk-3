@@ -25,6 +25,21 @@
         <p>Selamat datang di Self Diagnosis COVID-19</p>
         <a href="<?= base_url('Diagnosa') ?>" class="button">Mulai Diagnosa</a>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <br>
+    <?= $footer; ?>
 </body>
 
 </html>

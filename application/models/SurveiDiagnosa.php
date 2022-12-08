@@ -32,6 +32,13 @@ class SurveiDiagnosa extends CI_Model {
         $this->db->set('diagnosed', 1);
         $this->db->where('userId', $userId);
         $this->db->update('survei_diagnosa');
+    } 
+
+    public function deleteUnusedData($userId)
+    {
+        $this->db->where('userId', $userId);
+        $this->db->where('diagnosed', 0);
+        $this->db->delete('survei_diagnosa');
     }
 }
 ?>

@@ -55,3 +55,9 @@
     border-radius: 50%;
     background: white;
 }
+
+.survei-error{
+    color: red;
+    font-weight: 600;
+}
+
