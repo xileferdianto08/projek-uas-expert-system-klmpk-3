@@ -115,6 +115,46 @@ class Diagnosa extends CI_Controller
                     }
                 }
             }
+
+            if ((int) $result[$i]->gejalaId == 1) {
+                if ((int) $result[$i + 1]->gejalaId == 2) {
+                    if ((int) $result[$i + 2]->gejalaId == 3) {
+                        if ((int) $result[$i + 3]->gejalaId == 4) {
+                            if ((int) $result[$i + 4]->gejalaId == 5) {
+                                if ((int)$result[$i + 5]->gejalaId == 6) {
+                                    if ((int)$result[$i + 6]->gejalaId == 7) {
+                                        if ((int)$result[$i + 7]->gejalaId == 8) {
+                                            if ((int)$result[$i + 8]->gejalaId == 9) {
+                                                if ((int)$result[$i + 9]->gejalaId == 10) {
+                                                    if ((int)$result[$i + 10]->gejalaId == 11) {
+                                                        if ((int)$result[$i + 11]->gejalaId == 12) {
+                                                            if ((int)$result[$i + 12]->gejalaId == 13) {
+                                                                if ((int)$result[$i + 13]->gejalaId == 14) {
+                                                                    if ((int)$result[$i + 14]->gejalaId == 15) {
+                                                                        if ((int)$result[$i + 15]->gejalaId == 16) {
+                                                                            if ((int)$result[$i + 16]->gejalaId == 17) {
+                                                                                if ((int)$result[$i + 17]->gejalaId == 18) {
+                                                                                    $this->HasilDiagnosaModels->addHasilDiagnosa($userId, 6);
+                                                                                    $this->SurveiDiagnosa->updateDiagnosedStat((int)$result[0]->userId);
+                                                                                    break;
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
         $this->SurveiDiagnosa->deleteUnusedData((int)$result[0]->userId);
         redirect(base_url('Diagnosa/displayResult'));
